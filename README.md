@@ -8,7 +8,7 @@ A modern, high-performance custom CMS and Blog Engine built for **[zunoclothing.
 
 - **Framework:** Next.js (App Router, Turbopack, React 19, TypeScript)
 - **Styling:** Tailwind CSS (Modern, high-contrast, black & white minimalist fashion aesthetic)
-- **Database & ORM:** Prisma ORM with SQLite (local development) and PostgreSQL-ready schema (Neon / Supabase for Vercel production)
+- **Database & ORM:** Prisma ORM with PostgreSQL (Neon)
 - **Authentication:** Secure HTTP-only JWT sessions (`jose` + `bcryptjs`) with Next.js Middleware route protection
 - **Rich Text Editor:** TipTap (Headless, headings H2/H3, bold, italic, underline, lists, blockquotes, horizontal dividers, links, and inline images with alt-text)
 - **SEO & Structured Data:** JSON-LD `Article` & `BreadcrumbList` schemas, dynamic OpenGraph & Twitter Cards, auto-generating `sitemap.xml`, and `robots.txt`
@@ -91,9 +91,9 @@ A modern, high-performance custom CMS and Blog Engine built for **[zunoclothing.
 npm install
 ```
 
-### 2. Generate Prisma Client & Run Database Migrations:
+### 2. Create the Database Tables:
+Copy `DATABASE_URL` and `DATABASE_URL_UNPOOLED` from your Neon project into `.env`, then run:
 ```bash
-npx prisma generate
 npx prisma db push
 ```
 
@@ -142,16 +142,20 @@ Open **[http://localhost:3000](http://localhost:3000)** in your browser.
 
 ---
 
-## 6. Production Deployment (Vercel + PostgreSQL)
+## 6. Production Deployment (Vercel + Neon)
 
-To deploy on Vercel with Neon or Supabase PostgreSQL:
-
-1. Update `prisma/schema.prisma` datasource provider from `"sqlite"` to `"postgresql"`.
-2. Add your database connection string in Vercel environment variables:
+1. Connect this GitHub repository to a Vercel project.
+2. In the Vercel project, open **Storage**, then connect a **Neon** database. This sets `DATABASE_URL` and `DATABASE_URL_UNPOOLED`.
+3. In **Settings > Environment Variables**, add:
    ```env
-   DATABASE_URL="postgres://user:password@neon.tech/neondb?sslmode=require"
    JWT_SECRET="output of: openssl rand -base64 48"
    NEXT_PUBLIC_SITE_URL="https://zunoclothing.com"
    ```
-3. Run `prisma db push` against the production database, then seed it with a unique `ADMIN_PASSWORD` set in your shell: `npx tsx prisma/seed.ts`.
-4. Deploy with `vercel --prod` or connect your GitHub repository directly to Vercel.
+4. Copy both Neon URLs into your local `.env` and add a unique `ADMIN_PASSWORD`, then run:
+   ```bash
+   npx prisma db push
+   npx tsx --env-file=.env prisma/seed.ts
+   ```
+5. Redeploy from Vercel. Prisma Client is generated during install by the `postinstall` script.
+
+Featured images use an R2 image URL pasted in the post form, because Vercel can't store uploaded files in `public/uploads`.

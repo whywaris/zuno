@@ -63,8 +63,8 @@ export default async function HomePage({ searchParams }: PageProps) {
     ...(search
       ? {
           OR: [
-            { title: { contains: search } },
-            { excerpt: { contains: search } },
+            { title: { contains: search, mode: "insensitive" } },
+            { excerpt: { contains: search, mode: "insensitive" } },
           ],
         }
       : {}),

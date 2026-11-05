@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "postinstall": "prisma generate",
     "test": "npx tsx --test lib/security.test.ts lib/utils.test.ts"
   },
   "dependencies": {
