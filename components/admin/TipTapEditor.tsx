@@ -6,6 +6,7 @@ import Underline from "@tiptap/extension-underline";
 import Image from "@tiptap/extension-image";
 import Link from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
+import { TableKit } from "@tiptap/extension-table";
 import {
   Bold,
   Italic,
@@ -43,6 +44,7 @@ export default function TipTapEditor({
         },
       }),
       Underline,
+      TableKit.configure({ table: { resizable: false } }),
       Image.configure({
         allowBase64: true,
         HTMLAttributes: {

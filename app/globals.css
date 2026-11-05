@@ -102,6 +102,37 @@ body {
   pointer-events: none;
 }
 
+/* Scrolls on its own so a wide table never widens the page on phones. */
+.prose-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.prose-content th,
+.prose-content td {
+  min-width: 8rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose-content th {
+  background: #fafafa;
+  color: #111111;
+  font-weight: 600;
+}
+
+.prose-content th p,
+.prose-content td p {
+  margin: 0;
+}
+
 /* Keeps the page behind the open search dialog still, without a layout jump. */
 html {
   scrollbar-gutter: stable;
