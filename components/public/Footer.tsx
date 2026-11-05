@@ -22,28 +22,38 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-400">
               <li>
+                <Link href="/category/anime-streetwear" className="hover:text-white transition-colors">
+                  Anime Streetwear
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/anime-clothes" className="hover:text-white transition-colors">
+                  Casual &amp; Cool Anime Clothes
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/anime-gym-wear" className="hover:text-white transition-colors">
+                  Anime Gym Wear
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/store-reviews" className="hover:text-white transition-colors">
+                  Store Reviews
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/best-anime-stores" className="hover:text-white transition-colors">
+                  Best Anime Stores
+                </Link>
+              </li>
+              <li>
                 <Link href="/category/style-guides" className="hover:text-white transition-colors">
                   Style Guides
                 </Link>
               </li>
               <li>
                 <Link href="/category/fabric-care" className="hover:text-white transition-colors">
-                  Fabric & Care
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/womens-trends" className="hover:text-white transition-colors">
-                  Women&apos;s Trends
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/mens-style" className="hover:text-white transition-colors">
-                  Men&apos;s Style
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/streetwear" className="hover:text-white transition-colors">
-                  Streetwear
+                  Fabric &amp; Care
                 </Link>
               </li>
             </ul>
@@ -86,7 +96,6 @@ export default function Footer() {
 
         <div className="mt-14 pt-8 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 font-mono gap-4">
           <p>© 2026 Zuno Clothing. All rights reserved.</p>
-          <p>Crafted for elegance, speed & high Core Web Vitals.</p>
         </div>
       </div>
     </footer>

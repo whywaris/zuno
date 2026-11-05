@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
-import { slugify } from "@/lib/utils";
 
 export async function PUT(
   request: NextRequest,
@@ -16,21 +15,17 @@ export async function PUT(
 
   try {
     const { name, description } = await request.json();
-    const slug = slugify(name);
-
-    const existing = await prisma.category.findFirst({
-      where: { slug, NOT: { id } },
-    });
-    if (existing) {
+    if (!name) {
       return NextResponse.json(
-        { error: "A category with this name already exists" },
-        { status: 409 }
+        { error: "Category name is required" },
+        { status: 400 }
       );
     }
 
+    // The slug stays fixed so renaming a category never breaks its URL.
     const category = await prisma.category.update({
       where: { id },
-      data: { name, slug, description: description || null },
+      data: { name, description: description || null },
     });
 
     return NextResponse.json({ category });

@@ -7,11 +7,13 @@ import { Search, Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "Anime Streetwear", href: "/category/anime-streetwear" },
+  { name: "Anime Clothes", href: "/category/anime-clothes" },
+  { name: "Gym Wear", href: "/category/anime-gym-wear" },
+  { name: "Store Reviews", href: "/category/store-reviews" },
+  { name: "Best Stores", href: "/category/best-anime-stores" },
   { name: "Style Guides", href: "/category/style-guides" },
   { name: "Fabric & Care", href: "/category/fabric-care" },
-  { name: "Women's Trends", href: "/category/womens-trends" },
-  { name: "Men's Style", href: "/category/mens-style" },
-  { name: "Streetwear", href: "/category/streetwear" },
   { name: "About", href: "/about" },
 ];
 
@@ -45,7 +47,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Mobile hamburger button */}
-            <div className="flex items-center lg:hidden">
+            <div className="flex items-center xl:hidden">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -62,7 +64,7 @@ export default function Navbar() {
             </div>
 
             {/* Logo */}
-            <div className="flex-1 lg:flex-none text-center lg:text-left">
+            <div className="flex-1 xl:flex-none text-center xl:text-left">
               <Link href="/" className="inline-block group">
                 <span className="text-2xl sm:text-3xl font-extrabold tracking-[-0.04em] text-black">
                   ZUNO<span className="font-light tracking-widest text-neutral-400 ml-1.5 text-lg sm:text-xl">CLOTHING</span>
@@ -71,12 +73,12 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Nav Links */}
-            <nav className="hidden lg:flex items-center gap-7">
+            <nav className="hidden xl:flex items-center gap-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-xs uppercase tracking-widest font-medium text-neutral-600 hover:text-black transition-colors"
+                  className="whitespace-nowrap text-[11px] uppercase tracking-wider font-medium text-neutral-600 hover:text-black transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -100,7 +102,7 @@ export default function Navbar() {
 
         {/* Mobile Drawer Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-neutral-200 px-4 pt-2 pb-6 space-y-3">
+          <div className="xl:hidden bg-white border-b border-neutral-200 px-4 pt-2 pb-6 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}

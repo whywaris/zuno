@@ -24,11 +24,13 @@ async function main() {
 
   // Create categories
   const categories = [
-    { name: "Men's Style", slug: "mens-style", description: "Fashion tips, outfit ideas, and style guides for men." },
-    { name: "Women's Trends", slug: "womens-trends", description: "Latest trends, lookbooks, and styling inspiration for women." },
-    { name: "Fabric & Care", slug: "fabric-care", description: "Everything about fabrics, garment care, and clothing maintenance." },
-    { name: "Streetwear", slug: "streetwear", description: "Urban fashion, street style, sneaker culture, and casual fits." },
-    { name: "Style Guides", slug: "style-guides", description: "Comprehensive guides to building and refining your personal style." },
+    { name: "Anime Streetwear", slug: "anime-streetwear", description: "Anime streetwear, anime fashion, and styling guides." },
+    { name: "Casual & Cool Anime Clothes", slug: "anime-clothes", description: "Casual anime clothes, cool anime clothes, and everyday anime outfits." },
+    { name: "Anime Gym Wear", slug: "anime-gym-wear", description: "Anime gym clothes and workout guides." },
+    { name: "Store Reviews", slug: "store-reviews", description: "Reviews of anime clothing stores including BibiSama, Culture Kings, BoxLunch, Anime Ape, Umai, Atsuko, and Toho." },
+    { name: "Best Anime Stores", slug: "best-anime-stores", description: "Anime stores, anime clothing websites, and store comparisons." },
+    { name: "Style Guides", slug: "style-guides", description: "Outfit ideas and styling guides for men and women." },
+    { name: "Fabric & Care", slug: "fabric-care", description: "Print wash guides, hoodie care, and garment care." },
   ];
 
   for (const cat of categories) {
@@ -41,10 +43,8 @@ async function main() {
   console.log("Categories created:", categories.length);
 
   // Create sample posts
-  const mensStyle = await prisma.category.findUnique({ where: { slug: "mens-style" } });
-  const womensTrends = await prisma.category.findUnique({ where: { slug: "womens-trends" } });
   const fabricCare = await prisma.category.findUnique({ where: { slug: "fabric-care" } });
-  const streetwear = await prisma.category.findUnique({ where: { slug: "streetwear" } });
+  const animeStreetwear = await prisma.category.findUnique({ where: { slug: "anime-streetwear" } });
   const styleGuides = await prisma.category.findUnique({ where: { slug: "style-guides" } });
 
   const posts = [
@@ -59,7 +59,7 @@ async function main() {
       featuredImageAlt: "Stylish men's wardrobe essentials laid out on a wooden surface",
       metaTitle: "10 Essential Wardrobe Staples Every Man Needs | Zuno Clothing",
       metaDescription: "Discover the 10 must-have wardrobe essentials every modern man needs in 2026. Build a timeless, versatile closet with these key pieces.",
-      categoryId: mensStyle!.id,
+      categoryId: styleGuides!.id,
       views: 1247,
     },
     {
@@ -73,7 +73,7 @@ async function main() {
       featuredImageAlt: "Sustainably produced clothing hanging on a wooden rack",
       metaTitle: "Ultimate Guide to Sustainable Fashion 2026 | Zuno Clothing",
       metaDescription: "Learn how to build a sustainable wardrobe in 2026. From eco-friendly fabrics to ethical brands, your complete guide to conscious fashion.",
-      categoryId: womensTrends!.id,
+      categoryId: styleGuides!.id,
       views: 982,
     },
     {
@@ -101,7 +101,7 @@ async function main() {
       featuredImageAlt: "Street style fashion with sneakers and urban outfit",
       metaTitle: "Streetwear Culture: From Underground to Mainstream | Zuno Clothing",
       metaDescription: "Discover the evolution of streetwear culture, from 1980s underground origins to mainstream fashion. Key pieces, sneaker culture, and trends for 2026.",
-      categoryId: streetwear!.id,
+      categoryId: animeStreetwear!.id,
       views: 1583,
     },
     {
@@ -129,7 +129,7 @@ async function main() {
       featuredImageAlt: "Summer fashion trend showcase with light airy clothing",
       metaTitle: "Summer 2026 Fashion Trends | Zuno Clothing",
       metaDescription: "Stay ahead of the curve with the top summer 2026 fashion trends. Relaxed tailoring, earth tones, and more in our seasonal style guide.",
-      categoryId: womensTrends!.id,
+      categoryId: styleGuides!.id,
       views: 0,
     },
   ];

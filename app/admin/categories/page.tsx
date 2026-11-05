@@ -302,7 +302,7 @@ export default function AdminCategoriesPage() {
                   className="w-full px-3 py-2 bg-neutral-50 border border-neutral-200 rounded text-sm focus:outline-none focus:border-black"
                 />
                 <span className="text-[10px] font-mono text-neutral-400 mt-1 block">
-                  Slug: /category/{slugify(name) || "slug"}
+                  Slug: /category/{modalMode === "edit" && currentCat ? currentCat.slug : slugify(name) || "slug"}
                 </span>
               </div>
 
