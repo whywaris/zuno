@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     template: "%s | Zuno Clothing",
-    default: "Zuno Clothing — Anime Streetwear, Store Reviews & Style Guides",
+    default: "Zuno Clothing - Anime Fashion Guide",
   },
   description:
-    "Anime streetwear, anime clothes, store reviews, and styling and fabric care guides from Zuno Clothing.",
+    "Anime streetwear guides, honest anime clothing store reviews, outfit ideas and care tips to help you dress better and shop smarter.",
   metadataBase: new URL(SITE_URL),
   keywords: ["anime streetwear", "anime clothes", "anime fashion", "anime gym wear", "anime stores", "style guides", "fabric care"],
   other: { "google-adsense-account": "ca-pub-7076349236738543" },
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Zuno Clothing",
-    title: "Zuno Clothing — Anime Streetwear, Store Reviews & Style Guides",
-    description: "Anime streetwear, anime clothes, store reviews, and styling and fabric care guides.",
+    title: "Zuno Clothing - Anime Fashion Guide",
+    description: "Anime streetwear guides, honest anime clothing store reviews, outfit ideas and care tips to help you dress better and shop smarter.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zuno Clothing — Anime Streetwear, Store Reviews & Style Guides",
-    description: "Anime streetwear, anime clothes, store reviews, and styling and fabric care guides.",
+    title: "Zuno Clothing - Anime Fashion Guide",
+    description: "Anime streetwear guides, honest anime clothing store reviews, outfit ideas and care tips to help you dress better and shop smarter.",
   },
 };
 
