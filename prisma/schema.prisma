@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @default(cuid())
+  email    String @unique
+  password String
+  name     String
+  role     String @default("ADMIN")
+  createdAt DateTime @default(now())
+}
+
+model Category {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  posts       Post[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Post {
+  id               String   @id @default(cuid())
+  title            String
+  slug             String   @unique
+  content          String
+  excerpt          String
+  featuredImage    String   @default("")
+  featuredImageAlt String   @default("")
+  status           String   @default("DRAFT")
+  views            Int      @default(0)
+  readingTime      String   @default("1 min read")
+  metaTitle        String?
+  metaDescription  String?
+  categoryId       String
+  category         Category @relation(fields: [categoryId], references: [id])
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
