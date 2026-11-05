@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { DEFAULT_POST_IMAGE } from "@/lib/images";
-import { formatDate, POST_AUTHOR } from "@/lib/utils";
+import { formatDate, POST_AUTHOR, SITE_URL } from "@/lib/utils";
 import ShareButtons from "@/components/public/ShareButtons";
 import AuthorBio from "@/components/public/AuthorBio";
 import PostCard from "@/components/public/PostCard";
@@ -34,8 +34,7 @@ export async function generateMetadata({
 
   const title = post.metaTitle || post.title;
   const description = post.metaDescription || post.excerpt;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zunoclothing.com";
-  const postUrl = `${siteUrl}/guide/${post.slug}`;
+  const postUrl = `${SITE_URL}/guide/${post.slug}`;
   const imageUrl = post.featuredImage || DEFAULT_POST_IMAGE;
 
   return {
@@ -106,7 +105,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     orderBy: { createdAt: "desc" },
   });
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zunoclothing.com";
+  const siteUrl = SITE_URL;
   const postUrl = `${siteUrl}/guide/${post.slug}`;
   const imageUrl = post.featuredImage || DEFAULT_POST_IMAGE;
 

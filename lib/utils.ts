@@ -31,6 +31,15 @@ export function formatDate(date: Date | string): string {
 
 export const POST_AUTHOR = "Marceline Avila";
 
+// A localhost value copied into production would make every canonical and sitemap URL unreachable.
+export function resolveSiteUrl(value: string | undefined): string {
+  return value && !value.includes("localhost")
+    ? value.replace(/\/+$/, "")
+    : "https://zunoclothing.com";
+}
+
+export const SITE_URL = resolveSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
+
 export interface PostSummary {
   id: string;
   title: string;

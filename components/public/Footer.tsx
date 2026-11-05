@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({
+  categories,
+}: {
+  categories: { name: string; slug: string }[];
+}) {
   return (
     <footer className="bg-neutral-950 text-white mt-auto border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -11,7 +15,7 @@ export default function Footer() {
               ZUNO<span className="font-light tracking-widest text-neutral-400 ml-1 text-lg">CLOTHING</span>
             </span>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              A fashion, apparel, and lifestyle publication dedicated to mindful style, sustainable fabric care, and modern wardrobe essentials.
+              An anime fashion publication covering anime streetwear, everyday anime clothes, store reviews, and styling and fabric care guides.
             </p>
           </div>
 
@@ -21,41 +25,13 @@ export default function Footer() {
               Categories
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-400">
-              <li>
-                <Link href="/category/anime-streetwear" className="hover:text-white transition-colors">
-                  Anime Streetwear
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/anime-clothes" className="hover:text-white transition-colors">
-                  Casual &amp; Cool Anime Clothes
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/anime-gym-wear" className="hover:text-white transition-colors">
-                  Anime Gym Wear
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/store-reviews" className="hover:text-white transition-colors">
-                  Store Reviews
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/best-anime-stores" className="hover:text-white transition-colors">
-                  Best Anime Stores
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/style-guides" className="hover:text-white transition-colors">
-                  Style Guides
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/fabric-care" className="hover:text-white transition-colors">
-                  Fabric &amp; Care
-                </Link>
-              </li>
+              {categories.map((category) => (
+                <li key={category.slug}>
+                  <Link href={`/category/${category.slug}`} className="hover:text-white transition-colors">
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

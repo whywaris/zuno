@@ -1,8 +1,12 @@
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
+import { SITE_URL } from "@/lib/utils";
+
+// Built per request so new posts appear without a redeploy.
+export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zunoclothing.com";
+  const siteUrl = SITE_URL;
 
   // Static routes
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -60,6 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Dynamic category routes
     const categories = await prisma.category.findMany({
+      where: { posts: { some: { status: "PUBLISHED" } } },
       select: { slug: true, updatedAt: true },
     });
 

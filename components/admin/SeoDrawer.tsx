@@ -51,7 +51,7 @@ export default function SeoDrawer({
               Z
             </span>
             <span className="text-[11px] text-neutral-700 truncate max-w-sm">
-              zunoclothing.com &gt; blog &gt; {slug || "article-slug"}
+              zunoclothing.com &gt; guide &gt; {slug || "article-slug"}
             </span>
           </div>
           <h4 className="text-[#1a0dab] hover:underline text-lg font-medium leading-snug cursor-pointer line-clamp-1">

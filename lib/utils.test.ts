@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { feedWindow, firstParam, parsePage } from "./utils";
+import { feedWindow, firstParam, parsePage, resolveSiteUrl } from "./utils";
 
 test("feedWindow skips the hero post on every page of the main feed", () => {
   assert.deepEqual(feedWindow("1", 25, true, 8), { page: 1, skip: 1, totalPages: 3 });
@@ -15,6 +15,13 @@ test("feedWindow does not skip a post when there is no hero", () => {
 test("feedWindow does not count the hero as an extra page", () => {
   assert.equal(feedWindow("1", 9, true, 8).totalPages, 1);
   assert.equal(feedWindow("1", 10, true, 8).totalPages, 2);
+});
+
+test("resolveSiteUrl never returns a localhost address", () => {
+  assert.equal(resolveSiteUrl("http://localhost:3000"), "https://zunoclothing.com");
+  assert.equal(resolveSiteUrl(undefined), "https://zunoclothing.com");
+  assert.equal(resolveSiteUrl(""), "https://zunoclothing.com");
+  assert.equal(resolveSiteUrl("https://example.com/"), "https://example.com");
 });
 
 test("firstParam takes the first value of a repeated parameter", () => {

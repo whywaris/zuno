@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
-import { feedWindow, firstParam } from "@/lib/utils";
+import { feedWindow, firstParam, SITE_URL } from "@/lib/utils";
 import PostCard from "@/components/public/PostCard";
 import Pagination from "@/components/public/Pagination";
 import { ChevronRight } from "lucide-react";
@@ -25,22 +25,25 @@ export async function generateMetadata({
     return { title: "Category Not Found" };
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zunoclothing.com";
+  const postCount = await prisma.post.count({
+    where: { categoryId: category.id, status: "PUBLISHED" },
+  });
 
   return {
+    ...(postCount === 0 && { robots: { index: false, follow: true } }),
     title: `${category.name} Style & Trends`,
     description:
       category.description ||
       `Explore articles, guides, and curated stories in ${category.name} at Zuno Clothing.`,
     alternates: {
-      canonical: `${siteUrl}/category/${category.slug}`,
+      canonical: `${SITE_URL}/category/${category.slug}`,
     },
     openGraph: {
       title: `${category.name} | Zuno Clothing`,
       description:
         category.description ||
         `Explore articles, guides, and curated stories in ${category.name} at Zuno Clothing.`,
-      url: `${siteUrl}/category/${category.slug}`,
+      url: `${SITE_URL}/category/${category.slug}`,
     },
   };
 }
@@ -79,7 +82,7 @@ export default async function CategoryPage({
     take: limit,
   });
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zunoclothing.com";
+  const siteUrl = SITE_URL;
 
   const breadcrumbs = [
     { name: "Home", url: siteUrl },

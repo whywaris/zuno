@@ -1,12 +1,18 @@
 import Script from "next/script";
 import Navbar from "@/components/public/Navbar";
 import Footer from "@/components/public/Footer";
+import { getCategoriesWithPosts } from "@/lib/categories";
 
-export default function PublicLayout({
+// Static pages pick up newly filled categories in the menu.
+export const revalidate = 60;
+
+export default async function PublicLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const categories = await getCategoriesWithPosts();
+
   return (
     <>
       <Script id="google-tag-init">
@@ -22,9 +28,9 @@ gtag('js', new Date());`}
         crossOrigin="anonymous"
       />
 
-      <Navbar />
+      <Navbar categories={categories} />
       <main className="flex-1">{children}</main>
-      <Footer />
+      <Footer categories={categories} />
     </>
   );
 }

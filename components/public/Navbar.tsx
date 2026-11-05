@@ -5,19 +5,26 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Search, Menu, X } from "lucide-react";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Anime Streetwear", href: "/category/anime-streetwear" },
-  { name: "Anime Clothes", href: "/category/anime-clothes" },
-  { name: "Gym Wear", href: "/category/anime-gym-wear" },
-  { name: "Store Reviews", href: "/category/store-reviews" },
-  { name: "Best Stores", href: "/category/best-anime-stores" },
-  { name: "Style Guides", href: "/category/style-guides" },
-  { name: "Fabric & Care", href: "/category/fabric-care" },
-  { name: "About", href: "/about" },
-];
+const SHORT_LABELS: Record<string, string> = {
+  "anime-clothes": "Anime Clothes",
+  "anime-gym-wear": "Gym Wear",
+  "best-anime-stores": "Best Stores",
+};
 
-export default function Navbar() {
+export default function Navbar({
+  categories,
+}: {
+  categories: { name: string; slug: string }[];
+}) {
+  const navLinks = [
+    { name: "Home", href: "/" },
+    ...categories.map((category) => ({
+      name: SHORT_LABELS[category.slug] ?? category.name,
+      href: `/category/${category.slug}`,
+    })),
+    { name: "About", href: "/about" },
+  ];
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const searchDialog = useRef<HTMLDialogElement>(null);

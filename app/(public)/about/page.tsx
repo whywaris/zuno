@@ -5,7 +5,7 @@ import { POST_AUTHOR } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "About Editorial Mission",
   description:
-    "Learn about Zuno Clothing's mission to champion mindful dressing, fabric longevity, and authentic streetwear style.",
+    "Learn about Zuno Clothing's coverage of anime streetwear, anime clothes, store reviews, and styling and fabric care guides.",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
           About Zuno Clothing
         </h1>
         <p className="text-lg text-neutral-600 leading-relaxed">
-          A publication redefining modern apparel culture through intentional design, fabric preservation, and accessible styling.
+          A publication about anime fashion: what to wear, where to buy it, and how to make it last.
         </p>
       </header>
 
@@ -29,10 +29,10 @@ export default function AboutPage() {
             Our Editorial Purpose
           </h2>
           <p className="mb-4">
-            Founded with a vision to slow down the relentless cycle of disposable fashion, <strong>Zuno Clothing</strong> serves as an independent digital sanctuary for individuals who value quality over excess. We believe dressing well is not about amassing endless garments, but about mastering personal silhouette, understanding fiber characteristics, and building a versatile foundation that endures season after season.
+            <strong>Zuno Clothing</strong> helps anime fans dress well, on and off the street. We cover anime streetwear and everyday anime clothes, review the stores that sell them, and explain how to style printed pieces and keep them looking good.
           </p>
           <p>
-            Whether dissecting the intricate history of 1980s street culture or explaining how cold-water washing extends the lifecycle of selvedge denim, {POST_AUTHOR} writes deeply researched, actionable guides without fluff.
+            Whether comparing anime clothing stores or explaining how to wash a printed hoodie, {POST_AUTHOR} writes practical, actionable guides without fluff.
           </p>
         </section>
 
@@ -43,26 +43,26 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <h3 className="font-semibold text-neutral-900 text-sm uppercase tracking-wider mb-2 font-mono">
-                01. Mindful Wardrobes
+                01. Anime Style
               </h3>
               <p className="text-sm text-neutral-600">
-                Encouraging intentional curation through versatile capsule collections, smart layering techniques, and timeless color theory.
+                Outfit ideas and styling guides for anime streetwear, casual anime clothes, and anime gym wear.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-neutral-900 text-sm uppercase tracking-wider mb-2 font-mono">
-                02. Fabric Science & Care
+                02. Stores & Reviews
               </h3>
               <p className="text-sm text-neutral-600">
-                Demystifying textiles — from natural wools and flax linen to cutting-edge recycled synthetics — so your garments look new for years.
+                Reviews and comparisons of anime clothing stores, so you know where to shop before you buy.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-neutral-900 text-sm uppercase tracking-wider mb-2 font-mono">
-                03. Street & Youth Culture
+                03. Fabric & Care
               </h3>
               <p className="text-sm text-neutral-600">
-                Highlighting the grassroots origins, sneaker movements, and visionary designers shaping contemporary global streetwear.
+                Print wash guides and hoodie care to help your favorite pieces last longer.
               </p>
             </div>
           </div>
