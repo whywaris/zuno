@@ -49,6 +49,7 @@ export default function AdminPostsPage() {
       if (search) params.set("search", search);
       if (categoryFilter) params.set("categoryId", categoryFilter);
       if (statusFilter) params.set("status", statusFilter);
+      params.set("limit", "500");
 
       const res = await fetch(`/api/posts?${params.toString()}`);
       const data = await res.json();
@@ -111,6 +112,11 @@ export default function AdminPostsPage() {
           <h1 className="text-3xl font-black tracking-tight text-neutral-900">
             Posts Management
           </h1>
+          {!loading && (
+            <p className="mt-1 text-xs font-mono text-neutral-500">
+              {posts.length} {posts.length === 1 ? "post" : "posts"}
+            </p>
+          )}
         </div>
 
         <Link

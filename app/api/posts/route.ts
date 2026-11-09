@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
-import { slugify, calculateReadingTime } from "@/lib/utils";
+import { slugify, calculateReadingTime, parsePage } from "@/lib/utils";
 import { ALLOWED_IMAGE_HOSTS, isAllowedImageUrl } from "@/lib/images";
 
 export async function GET(request: NextRequest) {
@@ -14,8 +14,9 @@ export async function GET(request: NextRequest) {
   const status = searchParams.get("status");
   const categoryId = searchParams.get("categoryId");
   const search = searchParams.get("search");
-  const page = parseInt(searchParams.get("page") || "1");
-  const limit = parseInt(searchParams.get("limit") || "12");
+  const page = parsePage(searchParams.get("page") ?? undefined);
+  // ponytail: one page of up to 500 is enough for the admin list; add paging UI if the blog outgrows it.
+  const limit = Math.min(500, parsePage(searchParams.get("limit") ?? "12"));
 
   const where: Record<string, unknown> = {};
 
@@ -37,7 +38,17 @@ export async function GET(request: NextRequest) {
   const [posts, total] = await Promise.all([
     prisma.post.findMany({
       where,
-      include: { category: true },
+      // The list never shows the article body, so it isn't sent.
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        status: true,
+        views: true,
+        readingTime: true,
+        createdAt: true,
+        category: true,
+      },
       orderBy: { createdAt: "desc" },
       skip: (page - 1) * limit,
       take: limit,
