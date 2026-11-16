@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Anime streetwear guides, honest anime clothing store reviews, outfit ideas and care tips to help you dress better and shop smarter.",
   metadataBase: new URL(SITE_URL),
   keywords: ["anime streetwear", "anime clothes", "anime fashion", "anime gym wear", "anime stores", "style guides", "fabric care"],
-  other: { "google-adsense-account": "ca-pub-7076349236738543" },
+  other: { "google-adsense-account": "ca-pub-5238937416358061" },
   authors: [{ name: POST_AUTHOR }],
   openGraph: {
     type: "website",

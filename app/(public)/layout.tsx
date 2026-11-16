@@ -24,7 +24,7 @@ gtag('js', new Date());`}
       {/* Plain async script: React places it in the server-rendered <head>, where AdSense's site check reads it. */}
       <script
         async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7076349236738543"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5238937416358061"
         crossOrigin="anonymous"
       />
 
