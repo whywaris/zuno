@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
           Privacy Policy
         </h1>
         <p className="text-sm font-mono text-neutral-500">
-          Last updated: January 1, 2026 • Effective Date: January 1, 2026
+          Last updated: November 16, 2026
         </p>
       </header>
 
@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
             <li>
               <strong>Opt-Out of Personalized Advertising:</strong> Users may opt out of personalized advertising by visiting{" "}
               <a
-                href="https://www.google.com/settings/ads"
+                href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline text-black font-medium"
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
             3. Log Files & Analytics
           </h2>
           <p>
-            Like most websites, <em>zunoclothing.com</em> makes use of log files. The information inside the log files includes internet protocol (IP) addresses, type of browser, Internet Service Provider (ISP), date/time stamps, referring/exit pages, and number of clicks. This information is used solely to analyze trends, administer the site, track user movement around the site, and gather demographic insights. IP addresses and other such information are not linked to any personally identifiable information.
+            We use Google Analytics, loaded through Google Tag Manager, to understand how visitors use <em>zunoclothing.com</em>, such as which pages are read and how people arrive. Google Analytics uses cookies and receives information such as your IP address, browser, device type and the pages you visit. Our hosting provider also processes standard server log data, such as IP address and browser type, to deliver and secure the site. See our <a href="/cookies" className="underline text-black font-semibold">Cookie Policy</a> for how to opt out.
           </p>
         </section>
 
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
             8. Contact Information
           </h2>
           <p>
-            If you have any questions about this Privacy Policy, please contact our Data Protection Officer at:{" "}
+            If you have any questions about this Privacy Policy, please contact us at:{" "}
             <a
               href="mailto:privacy@zunoclothing.com"
               className="underline text-black font-semibold"

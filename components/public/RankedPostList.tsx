@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { DEFAULT_POST_IMAGE } from "@/lib/images";
-import type { PostSummary } from "@/lib/utils";
+import { PUBLIC_VIEWS_MIN, type PostSummary } from "@/lib/utils";
 
 interface RankedPostListProps {
   title: string;
@@ -40,7 +40,7 @@ export default function RankedPostList({
               >
                 <Image
                   src={post.featuredImage || DEFAULT_POST_IMAGE}
-                  alt=""
+                  alt={post.featuredImageAlt || post.title}
                   fill
                   sizes="64px"
                   className="object-cover"
@@ -53,7 +53,7 @@ export default function RankedPostList({
                 <Link href={`/guide/${post.slug}`}>{post.title}</Link>
               </h3>
               <p className="mt-1.5 text-xs text-neutral-500 font-mono">
-                {showViews
+                {showViews && post.views >= PUBLIC_VIEWS_MIN
                   ? `${post.views.toLocaleString("en-US")} views`
                   : `${post.category.name} • ${post.readingTime}`}
               </p>

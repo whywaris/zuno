@@ -160,9 +160,6 @@ export default async function HomePage({ searchParams }: PageProps) {
           ) : (
             (feed.length > 0 || !hero) && (
               <div className="mb-8 border-b border-neutral-100 pb-4">
-                <span className="text-xs uppercase tracking-widest text-neutral-500 font-mono">
-                  Fresh Perspectives
-                </span>
                 <FeedHeading className="text-2xl font-black tracking-tight text-neutral-950">
                   Latest Articles
                 </FeedHeading>

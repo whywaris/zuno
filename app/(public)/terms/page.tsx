@@ -16,7 +16,7 @@ export default function TermsPage() {
           Terms of Service
         </h1>
         <p className="text-sm font-mono text-neutral-500">
-          Last updated: January 1, 2026
+          Last updated: November 16, 2026
         </p>
       </header>
 
@@ -69,6 +69,35 @@ export default function TermsPage() {
           </h2>
           <p>
             We reserve the right, at our sole discretion, to modify or replace these Terms at any time. Changes become effective immediately upon posting.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-neutral-900 mb-3">
+            6. Limitation of Liability
+          </h2>
+          <p>
+            Zuno Clothing provides its content &ldquo;as is&rdquo;, for general information only. To the fullest extent permitted by law, we are not liable for any loss or damage arising from your use of the website or from relying on its content, including purchases you make from stores we write about. Store policies and prices change, so always check them on the store&apos;s own website before buying.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-neutral-900 mb-3">
+            7. Governing Law
+          </h2>
+          <p>
+            These Terms are governed by the laws of Pakistan, and any disputes are subject to the jurisdiction of the courts of Pakistan.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-neutral-900 mb-3">8. Contact</h2>
+          <p>
+            Questions about these Terms? Email{" "}
+            <a href="mailto:editorial@zunoclothing.com" className="underline text-black font-semibold">
+              editorial@zunoclothing.com
+            </a>
+            .
           </p>
         </section>
       </div>

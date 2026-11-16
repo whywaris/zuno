@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { POST_AUTHOR } from "@/lib/utils";
+import { AUTHOR_PROFILE, POST_AUTHOR } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "About Editorial Mission",
+  title: "About Zuno Clothing",
   description:
     "Learn about Zuno Clothing's coverage of anime streetwear, anime clothes, store reviews, and styling and fabric care guides.",
 };
@@ -70,10 +70,37 @@ export default function AboutPage() {
 
         <section>
           <h2 className="text-2xl font-bold text-neutral-900 mb-3 tracking-tight">
+            Who Runs Zuno Clothing
+          </h2>
+          <p>
+            Zuno Clothing is an independent anime fashion blog run from Multan, Pakistan. Articles are written by {POST_AUTHOR}, a writer based in {AUTHOR_PROFILE.location}.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-neutral-900 mb-3 tracking-tight">
+            How We Review Stores
+          </h2>
+          <p>
+            We check each store&apos;s own shipping, returns and size pages, its ratings on Trustpilot, Reviews.io and BBB, and customer reports. When we buy and test a product, the review says so and shows our own photos.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-neutral-900 mb-3 tracking-tight">
+            How We Make Money
+          </h2>
+          <p>
+            Zuno Clothing is supported by Google AdSense ads. We currently don&apos;t use affiliate links. If that changes, affected pages will say so at the top.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-neutral-900 mb-3 tracking-tight">
             Independence & Standards
           </h2>
           <p className="mb-4">
-            Our coverage is driven purely by editorial curiosity and community utility. We clearly delineate our sponsored content or affiliate product links, adhering strictly to FTC guidelines and ethical journalism standards. For questions about our editorial integrity or to submit a story idea, please reach out to {POST_AUTHOR}.
+            Our coverage is driven by editorial curiosity and what is useful to readers. For questions about a review or to suggest a story, please reach out to {POST_AUTHOR}.
           </p>
           <div className="pt-4">
             <Link

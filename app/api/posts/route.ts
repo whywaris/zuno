@@ -85,6 +85,8 @@ export async function POST(request: NextRequest) {
       featuredImageAlt,
       metaTitle,
       metaDescription,
+      boughtForReview,
+      pricesCheckedAt,
       slug: customSlug,
     } = body;
 
@@ -127,6 +129,8 @@ export async function POST(request: NextRequest) {
         featuredImageAlt: featuredImageAlt || "",
         metaTitle: metaTitle || null,
         metaDescription: metaDescription || null,
+        boughtForReview: Boolean(boughtForReview),
+        pricesCheckedAt: pricesCheckedAt || null,
         readingTime,
       },
       include: { category: true },

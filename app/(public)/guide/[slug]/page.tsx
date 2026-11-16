@@ -4,7 +4,10 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { DEFAULT_POST_IMAGE } from "@/lib/images";
-import { formatDate, POST_AUTHOR, SITE_URL } from "@/lib/utils";
+import { formatDate, POST_AUTHOR, PUBLIC_VIEWS_MIN, SITE_URL } from "@/lib/utils";
+import ReviewMethodBox from "@/components/public/ReviewMethodBox";
+
+const REVIEW_CATEGORIES = new Set(["store-reviews", "best-anime-stores"]);
 import ShareButtons from "@/components/public/ShareButtons";
 import AuthorBio from "@/components/public/AuthorBio";
 import PostCard from "@/components/public/PostCard";
@@ -171,9 +174,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </time>
             <span>•</span>
             <span>{post.readingTime}</span>
-            <span>•</span>
-            <span>{post.views + 1} views</span>
+            {post.views + 1 >= PUBLIC_VIEWS_MIN && (
+              <>
+                <span>•</span>
+                <span>{(post.views + 1).toLocaleString("en-US")} views</span>
+              </>
+            )}
           </div>
+          {post.pricesCheckedAt && (
+            <p className="mt-3 text-xs text-neutral-500 font-mono">
+              Prices last checked: {post.pricesCheckedAt}
+            </p>
+          )}
         </header>
 
         {/* High Resolution Featured Image */}
@@ -187,6 +199,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             className="object-cover"
           />
         </div>
+
+        {REVIEW_CATEGORIES.has(post.category.slug) && (
+          <ReviewMethodBox
+            showDidNotBuy={!post.boughtForReview}
+            multipleStores={post.category.slug !== "store-reviews" || post.slug.includes("-vs-")}
+          />
+        )}
 
         {/* Sticky / Inline Social Share */}
         <ShareButtons title={post.title} url={postUrl} />

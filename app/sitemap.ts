@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { SITE_URL } from "@/lib/utils";
+import { REDIRECTED_SLUGS } from "@/lib/redirects";
 
 // Built per request so new posts appear without a redeploy.
 export const dynamic = "force-dynamic";
@@ -35,6 +36,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     },
     {
+      url: `${siteUrl}/cookies`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: `${siteUrl}/terms`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -55,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       select: { slug: true, updatedAt: true },
     });
 
-    const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    const postRoutes: MetadataRoute.Sitemap = posts.filter((post) => !REDIRECTED_SLUGS.has(post.slug)).map((post) => ({
       url: `${siteUrl}/guide/${post.slug}`,
       lastModified: post.updatedAt,
       changeFrequency: "weekly",

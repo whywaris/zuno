@@ -31,6 +31,19 @@ export function formatDate(date: Date | string): string {
 
 export const POST_AUTHOR = "Marceline Avila";
 
+export const AUTHOR_PROFILE = {
+  location: "Denver, Colorado",
+  role: "Fashion & Apparel Editor",
+  // TODO: a specific 2-3 line bio from Marceline.
+  bio: "Curating modern wardrobe advice, fabric care insights, and contemporary fashion movements for mindful dressers worldwide.",
+  // TODO: a real photo URL (R2) and one profile link.
+  photo: "",
+  profileUrl: "",
+};
+
+// Low view counts read as an empty site, so counters stay hidden until this.
+export const PUBLIC_VIEWS_MIN = 1000;
+
 // A localhost value copied into production would make every canonical and sitemap URL unreachable.
 export function resolveSiteUrl(value: string | undefined): string {
   return value && !value.includes("localhost")

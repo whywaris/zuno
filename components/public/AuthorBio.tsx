@@ -1,4 +1,5 @@
-import { POST_AUTHOR } from "@/lib/utils";
+import Image from "next/image";
+import { AUTHOR_PROFILE, POST_AUTHOR } from "@/lib/utils";
 
 interface AuthorBioProps {
   name?: string;
@@ -8,13 +9,17 @@ interface AuthorBioProps {
 
 export default function AuthorBio({
   name = POST_AUTHOR,
-  role = "Fashion & Apparel Editor",
-  bio = "Curating modern wardrobe advice, fabric care insights, and contemporary fashion movements for mindful dressers worldwide.",
+  role = AUTHOR_PROFILE.role,
+  bio = AUTHOR_PROFILE.bio,
 }: AuthorBioProps) {
   return (
     <div className="my-10 p-6 sm:p-8 bg-neutral-50 rounded-lg border border-neutral-100 flex flex-col sm:flex-row items-start sm:items-center gap-5">
       <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border border-neutral-200 bg-neutral-900 text-white flex items-center justify-center font-serif text-xl">
-        {name.split(" ").map((part) => part[0]).join("")}
+        {AUTHOR_PROFILE.photo ? (
+          <Image src={AUTHOR_PROFILE.photo} alt={name} fill sizes="64px" className="object-cover" />
+        ) : (
+          name.split(" ").map((part) => part[0]).join("")
+        )}
       </div>
       <div>
         <div className="flex items-center gap-2 mb-1">
@@ -23,7 +28,18 @@ export default function AuthorBio({
             {role}
           </span>
         </div>
+        <p className="text-xs text-neutral-500 font-mono mb-1">{AUTHOR_PROFILE.location}</p>
         <p className="text-sm text-neutral-600 leading-relaxed">{bio}</p>
+        {AUTHOR_PROFILE.profileUrl && (
+          <a
+            href={AUTHOR_PROFILE.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-2 text-xs font-semibold uppercase tracking-wider text-neutral-900 underline underline-offset-4"
+          >
+            View profile
+          </a>
+        )}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Disclaimer & Advertising Disclosure",
   description:
-    "Affiliate, advertising, and content disclaimer for Zuno Clothing in compliance with FTC guidelines.",
+    "Advertising, affiliate and content disclaimer for Zuno Clothing.",
 };
 
 export default function DisclaimerPage() {
@@ -17,20 +17,20 @@ export default function DisclaimerPage() {
           Disclaimer & Disclosure
         </h1>
         <p className="text-sm font-mono text-neutral-500">
-          Last updated: January 1, 2026
+          Last updated: November 16, 2026
         </p>
       </header>
 
       <div className="prose-content space-y-8 text-neutral-700 text-sm sm:text-base leading-relaxed">
         <section>
           <h2 className="text-xl font-bold text-neutral-900 mb-3">
-            1. FTC Affiliate Disclosure
+            1. Affiliate Links
           </h2>
           <p>
-            In compliance with the Federal Trade Commission (FTC) guidelines, please assume that certain links on <strong>zunoclothing.com</strong> are affiliate links. If you click on an affiliate link and make a purchase, Zuno Clothing may earn a small affiliate commission at absolutely no additional cost to you.
+            We currently don&apos;t use affiliate links. If that changes, affected pages will say so at the top.
           </p>
           <p>
-            Our editorial integrity is paramount. We only recommend apparel items, textile detergents, steamers, and fashion brands that our editorial staff has vetted, tested, or genuinely values. Affiliate partnerships never influence our critical reviews or garment evaluations.
+            Our store reviews are based on desk research: each store&apos;s own policy pages, Trustpilot, Reviews.io, BBB and customer reports. When we buy and test a product, the review says so and shows our own photos.
           </p>
         </section>
 

@@ -39,6 +39,8 @@ export default async function EditPostPage({ params }: EditPostPageProps) {
         featuredImageAlt: post.featuredImageAlt,
         metaTitle: post.metaTitle,
         metaDescription: post.metaDescription,
+        boughtForReview: post.boughtForReview,
+        pricesCheckedAt: post.pricesCheckedAt,
       }}
       isEditing
     />

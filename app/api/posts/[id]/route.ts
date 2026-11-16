@@ -27,6 +27,8 @@ export async function PUT(
       featuredImageAlt,
       metaTitle,
       metaDescription,
+      boughtForReview,
+      pricesCheckedAt,
       slug: customSlug,
     } = body;
 
@@ -66,6 +68,8 @@ export async function PUT(
         ...(metaDescription !== undefined && {
           metaDescription: metaDescription || null,
         }),
+        ...(boughtForReview !== undefined && { boughtForReview: Boolean(boughtForReview) }),
+        ...(pricesCheckedAt !== undefined && { pricesCheckedAt: pricesCheckedAt || null }),
         ...(readingTime && { readingTime }),
       },
       include: { category: true },

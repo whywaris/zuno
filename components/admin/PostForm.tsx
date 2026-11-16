@@ -27,6 +27,8 @@ interface PostInitialData {
   featuredImageAlt?: string;
   metaTitle?: string | null;
   metaDescription?: string | null;
+  boughtForReview?: boolean;
+  pricesCheckedAt?: string | null;
 }
 
 interface PostFormProps {
@@ -61,6 +63,12 @@ export default function PostForm({
     initialData?.metaDescription || ""
   );
 
+  const [boughtForReview, setBoughtForReview] = useState(
+    initialData?.boughtForReview || false
+  );
+  const [pricesCheckedAt, setPricesCheckedAt] = useState(
+    initialData?.pricesCheckedAt || ""
+  );
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -109,6 +117,8 @@ export default function PostForm({
       featuredImageAlt: featuredImageAlt.trim(),
       metaTitle: metaTitle.trim() || null,
       metaDescription: metaDescription.trim() || null,
+      boughtForReview,
+      pricesCheckedAt: pricesCheckedAt.trim() || null,
     };
 
     try {
@@ -310,6 +320,36 @@ export default function PostForm({
                 onChange={(e) => setExcerpt(e.target.value)}
                 placeholder="A compelling 1-2 sentence preview for article cards and Google snippets..."
                 className="w-full px-3 py-2 bg-neutral-50 border border-neutral-200 rounded-lg text-xs text-neutral-800 focus:outline-none focus:border-neutral-900"
+              />
+            </div>
+          </div>
+
+          {/* Review and price details shown on the article */}
+          <div className="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs space-y-4">
+            <label className="flex items-start gap-2 text-sm text-neutral-800">
+              <input
+                type="checkbox"
+                checked={boughtForReview}
+                onChange={(e) => setBoughtForReview(e.target.checked)}
+                className="mt-1"
+              />
+              <span>
+                We bought from this store for this review
+                <span className="block text-xs text-neutral-500">
+                  Hides the &ldquo;We did not buy&rdquo; line in the review box.
+                </span>
+              </span>
+            </label>
+            <div>
+              <label className="block text-xs font-mono uppercase tracking-wider text-neutral-700 mb-1.5">
+                Prices last checked
+              </label>
+              <input
+                type="text"
+                value={pricesCheckedAt}
+                onChange={(e) => setPricesCheckedAt(e.target.value)}
+                placeholder="e.g. November 2026 (leave empty to hide)"
+                className="w-full px-3 py-2 bg-neutral-50 border border-neutral-200 rounded text-sm focus:outline-none focus:border-black"
               />
             </div>
           </div>

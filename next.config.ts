@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { ALLOWED_IMAGE_HOSTS } from "./lib/images";
+import { MERGE_REDIRECTS, MERGE_REDIRECTS_ENABLED } from "./lib/redirects";
 
 const nextConfig: NextConfig = {
   async redirects() {
@@ -9,6 +10,13 @@ const nextConfig: NextConfig = {
         destination: "/guide/:slug",
         permanent: true,
       },
+      ...(MERGE_REDIRECTS_ENABLED
+        ? MERGE_REDIRECTS.map(({ from, to }) => ({
+            source: `/guide/${from}`,
+            destination: `/guide/${to}`,
+            permanent: true,
+          }))
+        : []),
     ];
   },
   turbopack: {

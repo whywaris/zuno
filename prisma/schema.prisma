@@ -40,6 +40,8 @@ model Post {
   readingTime      String   @default("1 min read")
   metaTitle        String?
   metaDescription  String?
+  boughtForReview  Boolean  @default(false)
+  pricesCheckedAt  String?
   categoryId       String
   category         Category @relation(fields: [categoryId], references: [id])
   createdAt        DateTime @default(now())
