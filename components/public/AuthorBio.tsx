@@ -28,7 +28,6 @@ export default function AuthorBio({
             {role}
           </span>
         </div>
-        <p className="text-xs text-neutral-500 font-mono mb-1">{AUTHOR_PROFILE.location}</p>
         <p className="text-sm text-neutral-600 leading-relaxed">{bio}</p>
         {AUTHOR_PROFILE.profileUrl && (
           <a

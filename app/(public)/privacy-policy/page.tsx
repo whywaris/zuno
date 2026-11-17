@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: { absolute: "Privacy Policy | Zuno Clothing" },
   description:
-    "Privacy Policy for Zuno Clothing — Explaining our cookie policies, Google AdSense data usage, GDPR and CCPA compliance.",
+    "How Zuno Clothing collects and uses information, including cookies, Google AdSense, Google Analytics and your privacy rights.",
 };
+
+const LAST_UPDATED = "November 17, 2026";
+const EMAIL = "editorial@zunoclothing.com";
+
+const H2 = "text-xl font-bold text-neutral-900 mb-3";
+const LINK = "underline text-black font-semibold";
+
+function Ext({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={LINK}>
+      {children}
+    </a>
+  );
+}
 
 export default function PrivacyPolicyPage() {
   return (
@@ -16,125 +31,145 @@ export default function PrivacyPolicyPage() {
         <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-neutral-950 mt-2 mb-4">
           Privacy Policy
         </h1>
-        <p className="text-sm font-mono text-neutral-500">
-          Last updated: November 16, 2026
-        </p>
+        <p className="text-sm font-mono text-neutral-500">Last updated: {LAST_UPDATED}</p>
       </header>
 
       <div className="prose-content space-y-8 text-neutral-700 text-sm sm:text-base leading-relaxed">
         <section>
-          <h2 className="text-xl font-bold text-neutral-900 mb-3">1. Introduction</h2>
+          <h2 className={H2}>1. Introduction</h2>
           <p>
-            Welcome to <strong>Zuno Clothing</strong> (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), located at <strong>zunoclothing.com</strong>. We are committed to protecting your privacy and transparently disclosing how information is collected, used, and safeguarded when you visit our publication.
+            This Privacy Policy explains how <strong>Zuno Clothing</strong> (&ldquo;we,&rdquo; &ldquo;our&rdquo; or &ldquo;us&rdquo;) collects, uses and protects information when you visit <strong>zunoclothing.com</strong>. By using the site, you agree to the practices described here.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-neutral-900 mb-3">
-            2. Google AdSense & Third-Party Advertising
-          </h2>
-          <p>
-            We use Google AdSense and third-party advertising companies to serve advertisements when you visit our website. These companies may use information about your visits to this and other websites (such as through cookies, web beacons, and JavaScript) to provide advertisements about goods and services of interest to you.
-          </p>
+          <h2 className={H2}>2. Information We Collect</h2>
           <ul className="list-disc pl-5 space-y-1">
             <li>
-              <strong>Google&apos;s Use of Cookies:</strong> Google, as a third-party vendor, uses cookies to serve ads on <em>zunoclothing.com</em>.
+              <strong>Information you send us.</strong> The site has no accounts, comments or sign-up forms. If you email us, we receive your email address and whatever you include in your message.
             </li>
             <li>
-              <strong>Google DART / Advertising Cookies:</strong> Google&apos;s use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our site and/or other sites on the Internet.
-            </li>
-            <li>
-              <strong>Opt-Out of Personalized Advertising:</strong> Users may opt out of personalized advertising by visiting{" "}
-              <a
-                href="https://adssettings.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-black font-medium"
-              >
-                Google Ad Settings
-              </a>
-              . Alternatively, you may opt out of a third-party vendor&apos;s use of cookies for personalized advertising by visiting{" "}
-              <a
-                href="https://www.aboutads.info"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-black font-medium"
-              >
-                aboutads.info
-              </a>
-              .
+              <strong>Information collected automatically.</strong> Like most websites, our hosting provider, Google Analytics and Google AdSense receive technical data such as your IP address, browser type, device type, pages visited and referring site, mostly through cookies.
             </li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-neutral-900 mb-3">
-            3. Log Files & Analytics
-          </h2>
-          <p>
-            We use Google Analytics, loaded through Google Tag Manager, to understand how visitors use <em>zunoclothing.com</em>, such as which pages are read and how people arrive. Google Analytics uses cookies and receives information such as your IP address, browser, device type and the pages you visit. Our hosting provider also processes standard server log data, such as IP address and browser type, to deliver and secure the site. See our <a href="/cookies" className="underline text-black font-semibold">Cookie Policy</a> for how to opt out.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-bold text-neutral-900 mb-3">
-            4. Cookies & Web Beacons
-          </h2>
-          <p>
-            <em>zunoclothing.com</em> uses cookies to store information about visitors&apos; preferences, to record user-specific information on which pages the user accesses or visits, and to customize Web page content based on visitors&apos; browser type or other information that the visitor sends via their browser.
-          </p>
-          <p>
-            You can choose to disable cookies through your individual browser options. Detailed information about cookie management with specific web browsers can be found at the browsers&apos; respective websites.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-bold text-neutral-900 mb-3">
-            5. GDPR Data Protection Rights (European Economic Area)
-          </h2>
-          <p>
-            If you are a resident of the European Economic Area (EEA), you have certain data protection rights under the General Data Protection Regulation (GDPR). We aim to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data:
-          </p>
+          <h2 className={H2}>3. How We Use Information</h2>
           <ul className="list-disc pl-5 space-y-1">
-            <li>The right to access, update, or delete the information we have on you.</li>
-            <li>The right of rectification.</li>
-            <li>The right to object to processing.</li>
-            <li>The right of restriction.</li>
-            <li>The right to data portability.</li>
-            <li>The right to withdraw consent.</li>
+            <li>To reply to your emails, corrections and feedback.</li>
+            <li>To understand which articles are read so we can improve the site.</li>
+            <li>To show ads through Google AdSense, which funds the site.</li>
+            <li>To keep the site secure and working properly.</li>
+          </ul>
+          <p className="mt-3">We do not sell your personal information.</p>
+        </section>
+
+        <section>
+          <h2 className={H2}>4. Cookies</h2>
+          <p>
+            Cookies are small text files stored by your browser. We and our partners use them for advertising and analytics. You can block or delete cookies in your browser settings, though some features may then work differently. See our{" "}
+            <Link href="/cookies" className={LINK}>
+              Cookie Policy
+            </Link>{" "}
+            for the full list and opt-out options.
+          </p>
+        </section>
+
+        <section>
+          <h2 className={H2}>5. Google AdSense and Advertising</h2>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites.</li>
+            <li>Google&apos;s use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.</li>
+            <li>
+              You may opt out of personalized advertising by visiting{" "}
+              <Ext href="https://adssettings.google.com">Google Ads Settings</Ext>. You can also opt out of some third-party vendors&apos; use of cookies for personalized advertising at{" "}
+              <Ext href="https://www.aboutads.info">www.aboutads.info</Ext>.
+            </li>
+            <li>
+              To learn how Google uses information from sites that use its services, see{" "}
+              <Ext href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use our services</Ext>.
+            </li>
+            <li>We do not control the cookies that third-party advertisers use, and their use is governed by their own privacy policies.</li>
+            <li>If you opt out of personalized ads, you may still see non-personalized ads, which are based on general context such as the page you are reading rather than your browsing history.</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-neutral-900 mb-3">
-            6. California Consumer Privacy Act (CCPA) Rights
-          </h2>
+          <h2 className={H2}>6. Analytics</h2>
           <p>
-            Under the CCPA, California consumers have the right to request that a business disclose the categories and specific pieces of personal data collected, request deletion of collected personal data, and opt out of the sale of personal data. Zuno Clothing does not sell personal data to third parties.
+            We use Google Analytics, loaded through Google Tag Manager, to understand how visitors use the site, such as which pages are read and how people arrive. Google Analytics uses cookies and receives data such as your IP address, browser and the pages you visit. You can opt out with the{" "}
+            <Ext href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out Browser Add-on</Ext>.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-neutral-900 mb-3">
-            7. Children&apos;s Privacy (COPPA)
-          </h2>
+          <h2 className={H2}>7. Affiliate Links</h2>
           <p>
-            Protecting the privacy of young children is especially important. <em>zunoclothing.com</em> does not knowingly collect or maintain personally identifiable information from persons under 13 years of age, and no part of our website is directed to persons under 13.
+            We currently don&apos;t use affiliate links. If that changes, affected pages will say so at the top and this policy will be updated. See our{" "}
+            <Link href="/disclaimer" className={LINK}>
+              Affiliate &amp; Ad Disclaimer
+            </Link>
+            .
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-neutral-900 mb-3">
-            8. Contact Information
-          </h2>
+          <h2 className={H2}>8. Third-Party Websites</h2>
           <p>
-            If you have any questions about this Privacy Policy, please contact us at:{" "}
-            <a
-              href="mailto:privacy@zunoclothing.com"
-              className="underline text-black font-semibold"
-            >
-              privacy@zunoclothing.com
+            Our articles link to stores and other websites we don&apos;t control. Their privacy practices are their own, so please read their privacy policies before sharing information with them.
+          </p>
+        </section>
+
+        <section>
+          <h2 className={H2}>9. Data Retention and Security</h2>
+          <p>
+            We keep emails only as long as needed to reply and keep a record of the conversation. Data collected by Google is kept according to Google&apos;s own retention settings and policies. We use HTTPS across the site, but no method of transmission or storage is completely secure.
+          </p>
+        </section>
+
+        <section>
+          <h2 className={H2}>10. Your Rights</h2>
+          <p className="mb-3">
+            <strong>EEA and UK visitors:</strong> under the GDPR and UK GDPR you can ask to access, correct or delete your personal data, object to or restrict its processing, request a copy of it, and withdraw consent at any time. You can also complain to your local data protection authority.
+          </p>
+          <p className="mb-3">
+            <strong>California residents:</strong> under the CCPA/CPRA you can ask what personal information we collect, ask us to delete or correct it, and opt out of its sale or sharing. We do not sell personal information. You won&apos;t be treated differently for using these rights.
+          </p>
+          <p>
+            To make a request, email{" "}
+            <a href={`mailto:${EMAIL}`} className={LINK}>
+              {EMAIL}
             </a>
+            . For data held by Google, you can also use the opt-out links above.
+          </p>
+        </section>
+
+        <section>
+          <h2 className={H2}>11. Children&apos;s Privacy</h2>
+          <p>
+            Zuno Clothing is not directed at children under 13, and we do not knowingly collect personal information from them. If you believe a child has sent us personal information, contact us and we will delete it.
+          </p>
+        </section>
+
+        <section>
+          <h2 className={H2}>12. Changes to This Policy</h2>
+          <p>
+            We may update this policy from time to time. Changes take effect when posted on this page, and the &ldquo;Last updated&rdquo; date above will change.
+          </p>
+        </section>
+
+        <section>
+          <h2 className={H2}>13. Contact</h2>
+          <p>
+            Questions about this Privacy Policy? Email{" "}
+            <a href={`mailto:${EMAIL}`} className={LINK}>
+              {EMAIL}
+            </a>{" "}
+            or visit our{" "}
+            <Link href="/contact" className={LINK}>
+              contact page
+            </Link>
             .
           </p>
         </section>
@@ -142,4 +177,3 @@ export default function PrivacyPolicyPage() {
     </div>
   );
 }
-

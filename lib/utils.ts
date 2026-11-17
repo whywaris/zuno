@@ -32,10 +32,8 @@ export function formatDate(date: Date | string): string {
 export const POST_AUTHOR = "Marceline Avila";
 
 export const AUTHOR_PROFILE = {
-  location: "Denver, Colorado",
   role: "Fashion & Apparel Editor",
-  // TODO: a specific 2-3 line bio from Marceline.
-  bio: "Curating modern wardrobe advice, fabric care insights, and contemporary fashion movements for mindful dressers worldwide.",
+  bio: "Writes about anime streetwear, anime clothing stores and fabric care for Zuno Clothing.",
   // TODO: a real photo URL (R2) and one profile link.
   photo: "",
   profileUrl: "",

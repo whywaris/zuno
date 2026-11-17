@@ -1,6 +1,6 @@
 import Link from "next/link";
 import RankedPostList from "@/components/public/RankedPostList";
-import { POST_AUTHOR, type PostSummary } from "@/lib/utils";
+import { AUTHOR_PROFILE, POST_AUTHOR, type PostSummary } from "@/lib/utils";
 
 interface HomeSidebarProps {
   mostRead: PostSummary[];
@@ -30,8 +30,7 @@ export default function HomeSidebar({
           </h2>
         </div>
         <p className="text-sm text-neutral-600 leading-relaxed mb-3">
-          Curating modern wardrobe advice, fabric care insights, and
-          contemporary fashion movements for mindful dressers worldwide.
+          {AUTHOR_PROFILE.bio}
         </p>
         <Link
           href="/about"
