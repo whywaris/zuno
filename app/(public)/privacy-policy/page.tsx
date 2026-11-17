@@ -107,11 +107,7 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className={H2}>7. Affiliate Links</h2>
           <p>
-            We currently don&apos;t use affiliate links. If that changes, affected pages will say so at the top and this policy will be updated. See our{" "}
-            <Link href="/disclaimer" className={LINK}>
-              Affiliate &amp; Ad Disclaimer
-            </Link>
-            .
+            We don&apos;t use affiliate links, and we don&apos;t earn commissions from the stores we write about.
           </p>
         </section>
 

@@ -1,10 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import RankedPostList from "@/components/public/RankedPostList";
 import { AUTHOR_PROFILE, POST_AUTHOR, type PostSummary } from "@/lib/utils";
 
 interface HomeSidebarProps {
   mostRead: PostSummary[];
-  mostReadStartRank: number;
   categories: {
     id: string;
     name: string;
@@ -15,18 +15,19 @@ interface HomeSidebarProps {
 
 export default function HomeSidebar({
   mostRead,
-  mostReadStartRank,
   categories,
 }: HomeSidebarProps) {
   return (
     <aside className="flex flex-col gap-10" aria-label="Sidebar">
       <section className="p-6 bg-neutral-50 border border-neutral-100 rounded-lg">
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-11 h-11 rounded-full bg-neutral-900 text-white flex items-center justify-center font-serif shrink-0">
-            {POST_AUTHOR.split(" ").map((part) => part[0]).join("")}
+          <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 border border-neutral-200 bg-neutral-100">
+            <Image src={AUTHOR_PROFILE.photo} alt={POST_AUTHOR} fill sizes="44px" className="object-cover" />
           </div>
           <h2 className="font-bold tracking-tight text-neutral-950">
-            Meet {POST_AUTHOR}
+            <Link href={AUTHOR_PROFILE.path} className="hover:underline">
+              Meet {POST_AUTHOR}
+            </Link>
           </h2>
         </div>
         <p className="text-sm text-neutral-600 leading-relaxed mb-3">
@@ -44,7 +45,6 @@ export default function HomeSidebar({
         <RankedPostList
           title="Most Read"
           posts={mostRead}
-          startRank={mostReadStartRank}
           showThumbnails
           showViews
         />

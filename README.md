@@ -27,7 +27,6 @@ A modern, high-performance custom CMS and Blog Engine built for **[zunoclothing.
 │   │   ├── contact/page.tsx      # Contact form & direct email
 │   │   ├── privacy-policy/page.tsx # GDPR & Google AdSense compliant privacy policy
 │   │   ├── terms/page.tsx        # Terms of service
-│   │   ├── disclaimer/page.tsx   # FTC affiliate & advertising disclosures
 │   │   └── layout.tsx            # Public layout (Header/Navbar + Footer)
 │   ├── admin/                    # Password-protected Admin Panel
 │   │   ├── login/page.tsx        # Minimalist Admin Login
@@ -131,7 +130,6 @@ Open **[http://localhost:3000](http://localhost:3000)** in your browser.
    - `/contact`: Direct contact details (`help@zunoclothing.com`) and contact form.
    - `/privacy-policy`: Comprehensive GDPR & CCPA compliant privacy policy explicitly addressing Google AdSense cookies, DART cookies, and advertising opt-outs.
    - `/terms`: Terms of service.
-   - `/disclaimer`: FTC affiliate and sponsored content disclosures.
 2. **Structured Data:**
    - Schema.org `Article` and `BreadcrumbList` JSON-LD tags automatically injected into all article pages.
 3. **Dynamic Metadata:**

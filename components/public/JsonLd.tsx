@@ -1,4 +1,4 @@
-import { POST_AUTHOR, SITE_URL } from "@/lib/utils";
+import { AUTHOR_PROFILE, POST_AUTHOR, SITE_URL } from "@/lib/utils";
 
 interface ArticleJsonLdProps {
   title: string;
@@ -30,7 +30,7 @@ export function ArticleJsonLd({
     author: {
       "@type": "Person",
       name: authorName,
-      url: `${SITE_URL}/about`,
+      url: `${SITE_URL}${AUTHOR_PROFILE.path}`,
     },
     publisher: {
       "@type": "Organization",

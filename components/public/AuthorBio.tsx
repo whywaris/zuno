@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { AUTHOR_PROFILE, POST_AUTHOR } from "@/lib/utils";
 
 interface AuthorBioProps {
@@ -23,7 +24,9 @@ export default function AuthorBio({
       </div>
       <div>
         <div className="flex items-center gap-2 mb-1">
-          <h3 className="font-semibold text-neutral-900 text-base">{name}</h3>
+          <h3 className="font-semibold text-neutral-900 text-base">
+            <Link href={AUTHOR_PROFILE.path} className="hover:underline">{name}</Link>
+          </h3>
           <span className="text-xs bg-neutral-200 text-neutral-700 px-2 py-0.5 rounded font-mono">
             {role}
           </span>
@@ -36,7 +39,7 @@ export default function AuthorBio({
             rel="noopener noreferrer"
             className="inline-block mt-2 text-xs font-semibold uppercase tracking-wider text-neutral-900 underline underline-offset-4"
           >
-            View profile
+            LinkedIn profile
           </a>
         )}
       </div>

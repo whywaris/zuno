@@ -34,9 +34,9 @@ export const POST_AUTHOR = "Marceline Avila";
 export const AUTHOR_PROFILE = {
   role: "Fashion & Apparel Editor",
   bio: "Writes about anime streetwear, anime clothing stores and fabric care for Zuno Clothing.",
-  // TODO: a real photo URL (R2) and one profile link.
-  photo: "",
-  profileUrl: "",
+  photo: "https://pub-e74806879a2743f29f78877a65f8fa00.r2.dev/Marceline%20Avila.jfif",
+  profileUrl: "https://www.linkedin.com/in/%C3%A1vila-silva-marcelino/",
+  path: "/author/marceline-avila",
 };
 
 // Low view counts read as an empty site, so counters stay hidden until this.

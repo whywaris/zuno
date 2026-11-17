@@ -5,6 +5,7 @@ import { MERGE_REDIRECTS, MERGE_REDIRECTS_ENABLED } from "./lib/redirects";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      { source: "/disclaimer", destination: "/about", permanent: true },
       {
         source: "/blog/:slug",
         destination: "/guide/:slug",

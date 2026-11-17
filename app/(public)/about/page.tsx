@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { POST_AUTHOR } from "@/lib/utils";
+import { AUTHOR_PROFILE, POST_AUTHOR } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: {
     absolute: "About Zuno Clothing | Anime Fashion Guides and Store Reviews",
   },
   description:
-    "Learn who runs Zuno Clothing, how we review anime clothing stores, and how we handle affiliate links and ads.",
+    "Learn who runs Zuno Clothing, how we review anime clothing stores, and how the site is funded.",
 };
 
 const H2 = "text-2xl font-bold text-neutral-900 mb-3 tracking-tight";
@@ -72,7 +72,11 @@ export default function AboutPage() {
         <section>
           <h2 className={H2}>Meet the Author</h2>
           <p>
-            Articles on Zuno Clothing are written by <strong>{POST_AUTHOR}</strong>, who covers anime streetwear, anime clothing stores and fabric care. Every store review follows the method below.
+            Articles on Zuno Clothing are written by{" "}
+            <Link href={AUTHOR_PROFILE.path} className={LINK}>
+              {POST_AUTHOR}
+            </Link>
+            , who covers anime streetwear, anime clothing stores and fabric care. Every store review follows the method below.
           </p>
         </section>
 
@@ -116,13 +120,9 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className={H2}>Affiliate and Advertising Disclosure</h2>
+          <h2 className={H2}>Advertising Disclosure</h2>
           <p>
-            Zuno Clothing may show ads, including Google AdSense, to cover running costs. Ads never change our ratings or what we recommend. We currently don&apos;t use affiliate links; if that changes, affected pages will say so at the top. Read our{" "}
-            <Link href="/disclaimer" className={LINK}>
-              Affiliate &amp; Ad Disclaimer
-            </Link>{" "}
-            for details.
+            Zuno Clothing may show ads, including Google AdSense, to cover running costs. Ads never change our ratings or what we recommend. We don&apos;t use affiliate links.
           </p>
         </section>
 

@@ -193,7 +193,6 @@ export default async function HomePage({ searchParams }: PageProps) {
 
         <HomeSidebar
           mostRead={mostRead}
-          mostReadStartRank={trending.length + 1}
           categories={categories.filter((category) => category._count.posts > 0)}
         />
       </div>

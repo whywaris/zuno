@@ -57,11 +57,6 @@ export default function Footer({
                 </Link>
               </li>
               <li>
-                <Link href="/disclaimer" className="hover:text-white transition-colors">
-                  Affiliate & Ad Disclaimer
-                </Link>
-              </li>
-              <li>
                 <Link href="/about" className="hover:text-white transition-colors">
                   About Editorial
                 </Link>
