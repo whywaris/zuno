@@ -128,7 +128,7 @@ Open **[http://localhost:3000](http://localhost:3000)** in your browser.
 
 1. **Mandatory Legal & Policy Pages:**
    - `/about`: Company and editorial mission statement.
-   - `/contact`: Direct contact details (`editorial@zunoclothing.com`) and contact form.
+   - `/contact`: Direct contact details (`help@zunoclothing.com`) and contact form.
    - `/privacy-policy`: Comprehensive GDPR & CCPA compliant privacy policy explicitly addressing Google AdSense cookies, DART cookies, and advertising opt-outs.
    - `/terms`: Terms of service.
    - `/disclaimer`: FTC affiliate and sponsored content disclosures.

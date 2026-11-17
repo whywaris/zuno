@@ -59,10 +59,10 @@ export default function DisclaimerPage() {
           <p>
             If you have any questions regarding our disclosures, please contact us at{" "}
             <a
-              href="mailto:editorial@zunoclothing.com"
+              href="mailto:help@zunoclothing.com"
               className="underline text-black font-semibold"
             >
-              editorial@zunoclothing.com
+              help@zunoclothing.com
             </a>
             .
           </p>

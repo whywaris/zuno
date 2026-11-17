@@ -115,7 +115,7 @@ export default function CookiePolicyPage() {
           <h2 className="text-xl font-bold text-neutral-900 mb-3">6. Contact</h2>
           <p>
             Questions about cookies? Email{" "}
-            <a href="mailto:editorial@zunoclothing.com">editorial@zunoclothing.com</a>.
+            <a href="mailto:help@zunoclothing.com">help@zunoclothing.com</a>.
           </p>
         </section>
       </div>

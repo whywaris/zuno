@@ -26,7 +26,10 @@ const COVERAGE = [
   {
     title: "Store Reviews",
     text: "Reviews and comparisons of anime clothing stores, so you know where to shop before you buy.",
-    links: [["Store Reviews", "/category/store-reviews"]],
+    links: [
+      ["Store Reviews", "/category/store-reviews"],
+      ["Best Anime Stores", "/category/best-anime-stores"],
+    ],
   },
   {
     title: "Style Guides",
@@ -59,7 +62,7 @@ export default function AboutPage() {
         <section>
           <h2 className={H2}>Who We Are</h2>
           <p className="mb-4">
-            <strong>Zuno Clothing</strong> is an independent anime fashion blog run from Multan, Pakistan. We help anime fans find clothes they actually want to wear, from graphic tees and hoodies to gym wear, and the stores that sell them.
+            <strong>Zuno Clothing</strong> is an independent anime fashion publication. We help anime fans find good anime clothing, from graphic tees and hoodies to gym wear, and steer clear of bootleg or low-quality stores.
           </p>
           <p>
             We write practical guides: which stores are worth buying from, how sizing and shipping work before you order, and how to keep printed pieces looking good after many washes.
@@ -115,7 +118,7 @@ export default function AboutPage() {
         <section>
           <h2 className={H2}>Affiliate and Advertising Disclosure</h2>
           <p>
-            Zuno Clothing is supported by Google AdSense ads. We currently don&apos;t use affiliate links. If that changes, affected pages will say so at the top. Read our{" "}
+            Zuno Clothing may show ads, including Google AdSense, to cover running costs. Ads never change our ratings or what we recommend. We currently don&apos;t use affiliate links; if that changes, affected pages will say so at the top. Read our{" "}
             <Link href="/disclaimer" className={LINK}>
               Affiliate &amp; Ad Disclaimer
             </Link>{" "}
@@ -127,8 +130,8 @@ export default function AboutPage() {
           <h2 className={H2}>Corrections and Feedback</h2>
           <p className="mb-4">
             If you spot a mistake, an outdated price or a policy that has changed, email us at{" "}
-            <a href="mailto:editorial@zunoclothing.com" className={LINK}>
-              editorial@zunoclothing.com
+            <a href="mailto:help@zunoclothing.com" className={LINK}>
+              help@zunoclothing.com
             </a>{" "}
             or use our{" "}
             <Link href="/contact" className={LINK}>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const LAST_UPDATED = "November 17, 2026";
-const EMAIL = "editorial@zunoclothing.com";
+const EMAIL = "help@zunoclothing.com";
 
 const H2 = "text-xl font-bold text-neutral-900 mb-3";
 const LINK = "underline text-black font-semibold";
@@ -46,11 +46,12 @@ export default function PrivacyPolicyPage() {
           <h2 className={H2}>2. Information We Collect</h2>
           <ul className="list-disc pl-5 space-y-1">
             <li>
-              <strong>Information you send us.</strong> The site has no accounts, comments or sign-up forms. If you email us, we receive your email address and whatever you include in your message.
+              <strong>Information you send us.</strong> The site has no accounts, comments or contact form. If you email us, we receive your name and email address and whatever you include in your message.
             </li>
             <li>
-              <strong>Information collected automatically.</strong> Like most websites, our hosting provider, Google Analytics and Google AdSense receive technical data such as your IP address, browser type, device type, pages visited and referring site, mostly through cookies.
+              <strong>Information collected automatically.</strong> Like most websites, our hosting provider, Google Analytics and Google AdSense receive technical data such as your IP address, browser type, device type, pages visited, referring URLs and approximate location (country or city level), through cookies and similar technologies.
             </li>
+            <li>We do not knowingly collect sensitive personal information.</li>
           </ul>
         </section>
 
@@ -60,15 +61,15 @@ export default function PrivacyPolicyPage() {
             <li>To reply to your emails, corrections and feedback.</li>
             <li>To understand which articles are read so we can improve the site.</li>
             <li>To show ads through Google AdSense, which funds the site.</li>
-            <li>To keep the site secure and working properly.</li>
+            <li>To keep the site secure and prevent fraud and abuse.</li>
           </ul>
           <p className="mt-3">We do not sell your personal information.</p>
         </section>
 
         <section>
-          <h2 className={H2}>4. Cookies</h2>
+          <h2 className={H2}>4. Cookies and Similar Technologies</h2>
           <p>
-            Cookies are small text files stored by your browser. We and our partners use them for advertising and analytics. You can block or delete cookies in your browser settings, though some features may then work differently. See our{" "}
+            Cookies are small text files stored by your browser. Essential cookies keep the site working, analytics cookies tell us how pages are used, and advertising cookies are used by ad partners such as Google. You can block or delete cookies in your browser settings, though some features may then work differently. See our{" "}
             <Link href="/cookies" className={LINK}>
               Cookie Policy
             </Link>{" "}
@@ -77,7 +78,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className={H2}>5. Google AdSense and Advertising</h2>
+          <h2 className={H2}>5. Google AdSense and Third-Party Advertising</h2>
           <ul className="list-disc pl-5 space-y-1">
             <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites.</li>
             <li>Google&apos;s use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.</li>
@@ -98,7 +99,7 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className={H2}>6. Analytics</h2>
           <p>
-            We use Google Analytics, loaded through Google Tag Manager, to understand how visitors use the site, such as which pages are read and how people arrive. Google Analytics uses cookies and receives data such as your IP address, browser and the pages you visit. You can opt out with the{" "}
+            We use Google Analytics, loaded through Google Tag Manager, to understand how visitors use the site, such as which pages are read and how people arrive. Google Analytics uses cookies and receives data such as your IP address, browser and the pages you visit. We also use Google Search Console, which shows us how the site appears in Google Search; it does not place cookies on your device. You can opt out of Google Analytics with the{" "}
             <Ext href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out Browser Add-on</Ext>.
           </p>
         </section>
@@ -124,14 +125,14 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className={H2}>9. Data Retention and Security</h2>
           <p>
-            We keep emails only as long as needed to reply and keep a record of the conversation. Data collected by Google is kept according to Google&apos;s own retention settings and policies. We use HTTPS across the site, but no method of transmission or storage is completely secure.
+            We keep information only as long as needed: emails for as long as it takes to reply and keep a record of the conversation, and data collected by Google according to Google&apos;s own retention settings. We use reasonable safeguards, including HTTPS across the site, but no method of transmission or storage is 100% secure.
           </p>
         </section>
 
         <section>
           <h2 className={H2}>10. Your Rights</h2>
           <p className="mb-3">
-            <strong>EEA and UK visitors:</strong> under the GDPR and UK GDPR you can ask to access, correct or delete your personal data, object to or restrict its processing, request a copy of it, and withdraw consent at any time. You can also complain to your local data protection authority.
+            <strong>EEA and UK visitors:</strong> under the GDPR and UK GDPR you can ask to access, correct or delete your personal data, restrict or object to its processing, request a copy of it, and withdraw consent at any time. You can also complain to your local data protection authority.
           </p>
           <p className="mb-3">
             <strong>California residents:</strong> under the CCPA/CPRA you can ask what personal information we collect, ask us to delete or correct it, and opt out of its sale or sharing. We do not sell personal information. You won&apos;t be treated differently for using these rights.

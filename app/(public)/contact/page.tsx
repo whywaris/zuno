@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
+import { Info, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Zuno Clothing, an independent anime fashion blog run from Multan, Pakistan.",
+    "Contact Zuno Clothing, an independent online publication about anime fashion.",
 };
 
 export default function ContactPage() {
@@ -26,11 +26,10 @@ export default function ContactPage() {
         <div className="md:col-span-7 space-y-8">
           <div className="flex items-start gap-4">
             <div className="p-3 bg-neutral-100 rounded-lg text-neutral-900 shrink-0">
-              <MapPin className="w-5 h-5" />
+              <Info className="w-5 h-5" />
             </div>
             <p className="text-neutral-700 leading-relaxed">
-              Zuno Clothing is an independent anime fashion blog run from
-              Multan, Pakistan.
+              Zuno Clothing is an independent online publication.
             </p>
           </div>
 
@@ -42,10 +41,10 @@ export default function ContactPage() {
               <p className="text-neutral-700">
                 Email:{" "}
                 <a
-                  href="mailto:editorial@zunoclothing.com"
+                  href="mailto:help@zunoclothing.com"
                   className="font-semibold text-black underline underline-offset-4"
                 >
-                  editorial@zunoclothing.com
+                  help@zunoclothing.com
                 </a>
               </p>
               <p className="text-sm text-neutral-500 mt-1">
@@ -62,7 +61,7 @@ export default function ContactPage() {
               our inbox.
             </p>
             <a
-              href="mailto:editorial@zunoclothing.com"
+              href="mailto:help@zunoclothing.com"
               className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-neutral-900 hover:bg-black text-white rounded-lg text-xs uppercase font-mono tracking-wider font-semibold transition-colors"
             >
               <Mail className="w-4 h-4" />

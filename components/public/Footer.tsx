@@ -76,7 +76,7 @@ export default function Footer({
         </div>
 
         <div className="mt-14 pt-8 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 font-mono gap-4">
-          <p>© 2026 Zuno Clothing. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Zuno Clothing. All rights reserved.</p>
         </div>
       </div>
     </footer>

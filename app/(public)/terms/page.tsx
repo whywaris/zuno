@@ -94,8 +94,8 @@ export default function TermsPage() {
           <h2 className="text-xl font-bold text-neutral-900 mb-3">8. Contact</h2>
           <p>
             Questions about these Terms? Email{" "}
-            <a href="mailto:editorial@zunoclothing.com" className="underline text-black font-semibold">
-              editorial@zunoclothing.com
+            <a href="mailto:help@zunoclothing.com" className="underline text-black font-semibold">
+              help@zunoclothing.com
             </a>
             .
           </p>
